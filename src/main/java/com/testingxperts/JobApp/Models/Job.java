@@ -9,7 +9,8 @@ public class Job
     private String maxSalary;
     private String location;
 
-    public Job(Long id, String title, String description, String minSalary, String maxSalary, String location) {
+    public Job(Long id, String title, String description, String minSalary, String maxSalary, String location)
+    {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -18,7 +19,8 @@ public class Job
         this.location = location;
     }
 
-    public Long getId() {
+    public Long getId()
+    {
         return id;
     }
 
