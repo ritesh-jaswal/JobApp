@@ -24,6 +24,19 @@ public class JobController
         return jobService.findAll();
     }
 
+    @GetMapping("/{id}")
+    public Job getJobById(@PathVariable Long id)
+    {
+        Job job = jobService.getJobById(id);
+
+        if(job != null)
+        {
+            return job;
+        }
+
+        return new Job(1L,"dummy","dummy job","0","0","dummy");
+    }
+
     @PostMapping
     public String createJob(@RequestBody Job job)
     {
