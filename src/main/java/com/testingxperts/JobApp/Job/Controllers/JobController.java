@@ -1,7 +1,9 @@
 package com.testingxperts.JobApp.Job.Controllers;
 
+import com.testingxperts.JobApp.Company.Models.Company;
 import com.testingxperts.JobApp.Job.Models.Job;
 import com.testingxperts.JobApp.Job.Services.JobService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,12 +14,8 @@ import java.util.List;
 @RequestMapping("/jobs")
 public class JobController
 {
+    @Autowired
     private JobService jobService;
-
-    public JobController(JobService jobService)
-    {
-        this.jobService = jobService;
-    }
 
     @GetMapping
     public ResponseEntity<List<Job>> findAll()
@@ -41,7 +39,6 @@ public class JobController
     public ResponseEntity<String> createJob(@RequestBody Job job)
     {
         jobService.createJob(job);
-
         return new ResponseEntity<>("Job Added Successfully",HttpStatus.CREATED);
     }
 
