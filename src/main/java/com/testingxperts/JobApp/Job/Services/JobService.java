@@ -1,6 +1,6 @@
-package com.testingxperts.JobApp.Services;
+package com.testingxperts.JobApp.Job.Services;
 
-import com.testingxperts.JobApp.Models.Job;
+import com.testingxperts.JobApp.Job.Models.Job;
 
 import java.util.List;
 

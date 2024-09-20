@@ -1,7 +1,7 @@
-package com.testingxperts.JobApp.Controllers;
+package com.testingxperts.JobApp.Job.Controllers;
 
-import com.testingxperts.JobApp.Models.Job;
-import com.testingxperts.JobApp.Services.JobService;
+import com.testingxperts.JobApp.Job.Models.Job;
+import com.testingxperts.JobApp.Job.Services.JobService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
