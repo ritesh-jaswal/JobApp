@@ -1,6 +1,8 @@
 package com.testingxperts.JobApp.Controllers;
 
 import com.testingxperts.JobApp.Models.Job;
+import com.testingxperts.JobApp.Services.JobService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -10,18 +12,22 @@ import java.util.List;
 @RequestMapping("/jobs")
 public class JobController
 {
-    private List<Job> jobs = new ArrayList<>();
+    private JobService jobService;
+
+    public JobController(JobService jobService) {
+        this.jobService = jobService;
+    }
 
     @GetMapping
     public List<Job> findAll()
     {
-        return jobs;
+        return jobService.findAll();
     }
 
     @PostMapping
     public String createJob(@RequestBody Job job)
     {
-        jobs.add(job);
+        jobService.createJob(job);
 
         return "Job Added Successfully";
     }
